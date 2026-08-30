@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Space — Your Shared Thinking Space</title>
+  
+  <!-- Metadata & Authorship -->
+  <meta name="author" content="Jayanth" />
+  <meta name="description" content="Sticky Space — Infinite, collaborative sticky-note canvas web application. Developed by Jayanth." />
+  <meta name="keywords" content="sticky notes, canvas, whiteboard, collaboration, productivity, thoughts, notes" />
+  <meta name="theme-color" content="#1e1e2e" />
+  
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:title" content="Sticky Space — Your Shared Thinking Space" />
+  <meta property="og:description" content="Infinite collaborative dark canvas for notes and ideas. Developed by Jayanth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://github.com/JayAnthKolli46/Sticky-Space" />
+  
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; connect-src 'self';" />
+  
+  <!-- Google Fonts: Caveat (notes) & Inter (UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Infinite Pannable / Zoomable Canvas -->
+  <div class="canvas-wrapper">
+    <div class="canvas-inner"></div>
+    <div class="canvas-empty-hint hidden">
+      <span>✨ Click a color below to place your first note →</span>
+    </div>
+  </div>
+
+  <!-- Zoom Indicator Pill (Bottom Right) -->
+  <div class="zoom-pill" title="Click to reset zoom & pan">100%</div>
+
+  <!-- User Presence Badge (Top Right) -->
+  <div class="user-presence" title="Click to switch space or edit profile"></div>
+
+  <!-- Search Bar (Top Center) -->
+  <div class="search-bar-wrap hidden"></div>
+
+  <!-- Palette Dock (Bottom Center) -->
+  <div class="palette-dock"></div>
+
+  <!-- Recycle Bin Drawer (Right Slide-in) -->
+  <div class="recycle-panel closed"></div>
+
+  <!-- Custom Right-Click Context Menu -->
+  <div class="context-menu"></div>
+
+  <!-- Room Entry & Session Modal -->
+  <div class="modal-overlay hidden"></div>
+
+  <!-- Scripts in dependency order -->
+  <script src="js/constants.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/canvas.js"></script>
+  <script src="js/notes.js"></script>
+  <script src="js/dock.js"></script>
+  <script src="js/recycleBin.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/contextMenu.js"></script>
+  <script src="js/roomModal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
