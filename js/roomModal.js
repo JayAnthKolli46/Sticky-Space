@@ -41,8 +41,8 @@
             <div class="modal-field-group">
               <label class="modal-field-label" for="room-code-input">Room Code</label>
               <div class="modal-room-row">
-                <input type="text" id="room-code-input" class="modal-input" placeholder="e.g. swift-falcon-72" maxlength="48" pattern="[a-zA-Z0-9_-]+" title="Alphanumeric characters, dashes and underscores only" required />
-                <button type="button" class="modal-random-btn" id="btn-random-code" title="Generate random room code">🎲 Random</button>
+                <input type="text" id="room-code-input" class="modal-input" placeholder="e.g. space-7k2m-9p4q-x8vw" maxlength="48" pattern="[a-zA-Z0-9_-]+" title="Alphanumeric characters, dashes and underscores only" required />
+                <button type="button" class="modal-random-btn" id="btn-random-code" title="Generate secure random room code">🎲 Random</button>
               </div>
             </div>
 
@@ -67,7 +67,7 @@
 
     initEvents() {
       const NS = window.StickySpace || {};
-      const generateRoomCode = NS.generateRoomCode || (() => 'room-' + Math.floor(Math.random()*1000));
+      const generateRoomCode = NS.generateRoomCode || (() => 'space-' + Math.random().toString(36).substring(2, 10));
 
       this.randomBtn.addEventListener('click', () => {
         this.roomInput.value = generateRoomCode();
@@ -106,7 +106,7 @@
 
     initSession() {
       const NS = window.StickySpace || {};
-      const generateRoomCode = NS.generateRoomCode || (() => 'room-' + Math.floor(Math.random()*1000));
+      const generateRoomCode = NS.generateRoomCode || (() => 'space-' + Math.random().toString(36).substring(2, 10));
       const session = this.db.getSession();
       const hashRoom = window.location.hash.slice(1).trim().toLowerCase().replace(/[^a-z0-9_-]/g, '');
 
@@ -134,7 +134,7 @@
 
     openModal() {
       const NS = window.StickySpace || {};
-      const generateRoomCode = NS.generateRoomCode || (() => 'room-' + Math.floor(Math.random()*1000));
+      const generateRoomCode = NS.generateRoomCode || (() => 'space-' + Math.random().toString(36).substring(2, 10));
 
       this.modalEl.classList.remove('hidden');
       if (!this.roomInput.value) {
